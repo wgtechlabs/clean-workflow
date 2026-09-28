@@ -5,7 +5,7 @@ import subprocess
 import tempfile
 from pathlib import Path
 
-SOURCES = {'clean-coding': 'clean-development', 'clean-code-review': 'clean-code-review'}
+SOURCES = {'clean-coding': 'clean-coding', 'clean-code-review': 'clean-code-review'}
 
 
 def latest_release(pages):

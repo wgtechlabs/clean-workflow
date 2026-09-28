@@ -13,6 +13,32 @@ Produce a concise, evidence-backed review of the requested change. This skill sy
 - Read surrounding code, relevant callers, contracts, and tests. Derive expected behavior from the task and repository evidence. Ask a focused question only if a missing product decision materially changes the review; do not start a planning interview.
 - State scope and any missing evidence. Distinguish new or newly exposed defects from preexisting issues. Do not expand a diff review into a whole-repository rewrite.
 
+## Validate existing feedback before adding findings
+
+For a PR, fetch the current head, existing reviews, inline threads and replies,
+and relevant PR comments before generating new findings. Paginate through the
+feedback; if access or pagination is incomplete, report the coverage gap and do
+not claim the review is duplicate-free. For local code, inspect any supplied
+prior feedback; do not invent a remote review target.
+
+Validate each relevant existing finding against the current code, callers,
+contracts, and tests. Distinguish still-valid issues, verified fixes, duplicates,
+unsupported claims, and unresolved questions. Neither a reviewer assertion nor
+a resolved thread proves correctness. Do not endorse speculative work, style
+preferences, or unnecessary complexity simply because another reviewer asked.
+
+Compare new candidates with existing feedback by root cause and consequence,
+not just wording or line number. Link a still-valid existing finding instead of
+posting it again. When authorized to publish, reply in its existing thread only
+when new evidence materially changes the discussion; avoid repetitive agreement.
+Explain why a claim is unsupported with concrete evidence, without dismissing
+reviews or resolving threads. Inspect the remaining diff for genuinely new
+issues, and separate those from the assessment of existing feedback.
+
+A review-only request does not authorize implementing fixes. Addressing review
+feedback is an implementation task handled by Clean Coding; this skill does not
+require that plugin to be installed to perform a review.
+
 ## Apply relevant review lenses
 
 ### Correctness and evidence — APEX
@@ -59,9 +85,9 @@ Keep source files unchanged unless the user requests fixes. Apply only the autho
 
 ## Publish PR reviews when authorized
 
-Publish only when the user or applicable repository instructions authorize posting reviews. Installing or invoking this skill alone does not grant that permission. Reuse authorization already supplied; otherwise report in chat. Honor read-only and no-posting requests. A no-approval request still permits comments when posting is separately authorized. The steps below apply only within that authorization.
+When the user asks to review a PR using this skill, publish the review on that PR unless they request chat-only, read-only, or no posting. Installing the skill alone does not authorize activity. For code without a PR, share the review in chat. Reuse existing authorization; a no-approval request still permits review comments unless posting is also prohibited. Approval remains separately authorized below.
 
-- When required changes remain, post one concise PR comment containing the confirmed findings, exact file/line links, reviewed commit, and validation limits. Do not submit a formal REQUEST_CHANGES review unless the user requests it.
+- When required changes remain, publish a concise review or PR comment containing genuinely new confirmed findings, links to still-valid existing findings, the reviewed commit, and validation limits. Prefer inline review comments for new line-specific findings; do not reopen an existing finding as a new thread. Do not submit a formal REQUEST_CHANGES review unless the user requests it.
 - When no required changes remain, use the approval flow below; its review note is the published result, so do not add a duplicate comment. If approval is not authorized, unavailable, or inappropriate, post a comment explaining the conclusion and limitation when commenting is authorized; otherwise report in chat.
 - If the review cannot be completed, post a clearly labeled partial review with verified findings and missing evidence; do not imply a clean result.
 - Before posting, recheck the current head and review any new changes affecting the conclusions. Inspect existing comments and reviews to avoid duplicating the same result for the same commit; link an existing matching report instead.
