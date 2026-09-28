@@ -1,0 +1,35 @@
+{
+  "name": "clean-workflow",
+  "version": "0.1.0",
+  "description": "WG Tech Labs project workflow conventions for AI coding agents.",
+  "author": {
+    "name": "WG Technology Labs",
+    "url": "https://github.com/wgtechlabs"
+  },
+  "homepage": "https://github.com/wgtechlabs/clean-workflow",
+  "repository": "https://github.com/wgtechlabs/clean-workflow",
+  "license": "MIT",
+  "keywords": [
+    "clean-commit",
+    "clean-flow",
+    "clean-labels",
+    "github",
+    "workflow"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Clean Workflow",
+    "shortDescription": "Apply WG Tech Labs workflow conventions",
+    "longDescription": "Plan, build, review, release, and maintain projects using WG Tech Labs Clean Workflow conventions.",
+    "developerName": "WG Technology Labs",
+    "category": "Productivity",
+    "capabilities": [
+      "Instructions"
+    ],
+    "websiteURL": "https://github.com/wgtechlabs/clean-workflow",
+    "defaultPrompt": [
+      "Use Clean Workflow for this task.",
+      "Apply WG Tech Labs project conventions."
+    ]
+  }
+}
