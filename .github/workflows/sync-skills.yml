@@ -20,22 +20,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: dev
-      - uses: actions/checkout@v4
-        with:
-          repository: wgtechlabs/clean-coding
-          ref: main
-          path: .upstream/clean-coding
-          persist-credentials: false
-      - uses: actions/checkout@v4
-        with:
-          repository: wgtechlabs/clean-code-review
-          ref: main
-          path: .upstream/clean-code-review
-          persist-credentials: false
-      - name: Sync bundled skills
+      - name: Detect and import stable releases
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           python3 scripts/test-sync-skills.py
-          bash scripts/sync-skills.sh .upstream
+          python3 scripts/sync-skills.py
           git diff --check
       - name: Open or update sync PR
         uses: peter-evans/create-pull-request@v7
@@ -45,9 +35,9 @@ jobs:
           commit-message: '🔧 update: sync canonical skills'
           title: '🔧 update: sync canonical skills'
           body: |
-            Import the canonical skills from the standalone repositories' main branches.
-            Source commits are recorded in skills/UPSTREAM.md. Review the skill changes before merging.
+            Import the canonical skills from the standalone repositories' published stable releases.
+            Release tags and exact commits are recorded in skills/upstream-releases.json. Review the skill changes before merging.
           add-paths: |
             skills/clean-development/
             skills/clean-code-review/
-            skills/UPSTREAM.md
+            skills/upstream-releases.json

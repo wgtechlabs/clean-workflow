@@ -8,7 +8,7 @@
 - Make behavior changes to the two specialized skills in their canonical repositories first. Import upstream changes here; do not patch or fork the bundled skill content independently.
 - Preserve source attribution, supporting files, and relative links when importing updates. Record the upstream revision and validate the resulting plugin before publishing.
 
-Run `bash scripts/sync-skills.sh <upstream-checkout-directory>` to import both skills and record their revisions in `skills/UPSTREAM.md`. The scheduled workflow opens a PR against `dev`; it does not merge updates. Run `python3 scripts/test-sync-skills.py` after changing sync behavior.
+Run `python3 scripts/sync-skills.py` to detect published stable releases and record imported tags and exact commits in `skills/upstream-releases.json`. Never sync unreleased main-branch commits. The scheduled workflow opens a PR against `dev`; it does not merge updates. Run `python3 scripts/test-sync-skills.py` after changing sync behavior.
 
 ## Delivery and validation
 

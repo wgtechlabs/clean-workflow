@@ -86,18 +86,22 @@ Clean Workflow owns task routing, Git and delivery conventions, and integration
 of the two skills. The bundled copies keep plugin installation self-contained;
 they are maintained dependencies, not separate authoritative implementations.
 
-The `Sync upstream skills` workflow checks both upstream `main` branches daily
-at 00:00 UTC and supports manual dispatch. It copies each entire skill directory,
-records source commits in [skills/UPSTREAM.md](skills/UPSTREAM.md), and opens or
-updates one PR against `dev`. It never merges automatically. Supporting files and
-deletions are synchronized along with `SKILL.md`.
+The `Sync upstream skills` workflow checks published stable releases daily at
+00:00 UTC and supports manual dispatch. Drafts and prereleases are ignored.
+When a release differs from [the recorded release](skills/upstream-releases.json),
+it imports the entire skill directory from the release tag's exact commit and
+opens or updates one PR against `dev`. It never pushes directly to `dev` or merges
+automatically; review and merge the PR yourself. Repeated runs without a release
+change produce no new changes. Repositories with no stable release keep their
+existing bundled skill. A moved release tag fails the run for investigation.
 
 The workflow becomes scheduled after it reaches the default branch. Enable
 GitHub Actions to create pull requests in repository settings; it uses the
 built-in `GITHUB_TOKEN` with contents and pull-request write permissions.
-For a local sync, check out both upstream repositories at their intended `main`
-commits under one directory and run `bash scripts/sync-skills.sh <directory>`.
-Review the resulting diff before submitting it.
+For a local check, run `python3 scripts/sync-skills.py` with authenticated `gh`
+and Git available. This prepares local changes only. Review the diff before
+submitting it. Initial pre-release provenance is retained in
+[skills/UPSTREAM.md](skills/UPSTREAM.md).
 
 ## Tools used
 
