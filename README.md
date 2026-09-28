@@ -30,6 +30,19 @@ from `skills/clean-workflow/`.
 - `.codex-plugin/plugin.json` — Codex plugin manifest
 - `skills/clean-workflow/SKILL.md` — canonical skill entrypoint
 - `skills/clean-workflow/references/` — detailed workflow conventions
+- `.github/workflows/release.yml` — automated versioning and releases
+
+## Releases
+
+Releases run from `main` through
+[`release-build-flow-action`](https://github.com/wgtechlabs/release-build-flow-action).
+The action derives the SemVer bump from Clean Commit history, updates
+`CHANGELOG.md`, creates the version tag, and publishes the GitHub Release.
+
+The workflow uses the repository's `GH_PAT` secret for release operations. The
+first release falls back to `0.1.0`. The Codex plugin manifest currently keeps
+its version in `.codex-plugin/plugin.json`; update that manifest in the release
+change until the release action supports plugin manifests directly.
 
 ## License
 

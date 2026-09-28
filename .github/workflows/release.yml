@@ -1,0 +1,29 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create release
+        uses: wgtechlabs/release-build-flow-action@v1
+        with:
+          github-token: ${{ secrets.GH_PAT }}
+          initial-version: 0.1.0
+          changelog-path: ./CHANGELOG.md
+          changelog-enabled: true
+          commit-changelog: true
+          create-release: true
+          release-name-template: '{tag}'
