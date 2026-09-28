@@ -1,7 +1,7 @@
 {
   "name": "clean-workflow",
   "version": "0.1.0",
-  "description": "WG Tech Labs project workflow conventions for AI coding agents.",
+  "description": "WG Tech Labs development, code review, and delivery workflows for AI coding agents.",
   "author": {
     "name": "WG Technology Labs",
     "url": "https://github.com/wgtechlabs"

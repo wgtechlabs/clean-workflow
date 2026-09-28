@@ -1,6 +1,10 @@
 # Clean Commit
 
-Use one of these exact formats:
+When Clean Commit is in scope, use one of these exact formats:
+
+Do not impose this format on a project that uses Conventional Commits, a
+repository-specific format, or another established convention. Follow that
+project's format instead.
 
 ```text
 <emoji> <type>: <description>

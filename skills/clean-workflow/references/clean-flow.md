@@ -1,6 +1,10 @@
 # Clean Flow
 
-Ship through `dev`; keep `main` stable.
+When Clean Flow is in scope, ship through `dev` and keep `main` stable.
+
+Do not impose this branch model on a project that uses trunk-based development,
+GitHub Flow, release branches, or another established model. Follow the target
+repository's documented branch policy instead.
 
 ```text
 main + dev + feature branches
