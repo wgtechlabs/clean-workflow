@@ -23,19 +23,26 @@ they are in scope:
 
 1. Follow explicit system, repository, organization, and user instructions.
 2. Inspect existing commits, branch names, pull-request conventions, labels,
-   contribution docs, and agent instructions for the project's established
-   workflow.
-3. Treat Clean Workflow as active when the project explicitly references it,
-   the user requests it, or the repository is a WG Tech Labs project that uses
-   these conventions.
-4. Enter contribution-preservation mode when working in a fork, preparing an
+   contribution docs, remote URL, and agent instructions for the project's
+   established workflow.
+3. Treat Clean Workflow as active by default when the canonical Git remote
+   owner is `wgtechlabs` or `warengonzaga`, unless explicit repository
+   instructions opt out or require a different convention.
+4. Treat Clean Workflow as active when the project explicitly references any
+   of these conventions or repositories: Clean Workflow, Clean Commit, Clean
+   Flow, or Clean Labels. Search repository instructions, contribution docs,
+   workflow files, and recent commits for those references.
+5. Treat Clean Workflow as active when the user requests it, even in an
+   external project, unless that would violate the target project's explicit
+   contribution rules.
+6. Enter contribution-preservation mode when working in a fork, preparing an
    upstream contribution, opening a PR against another project's repository,
    maintaining a dependency, or working in an unrelated external repository.
-5. In contribution-preservation mode, follow the host project's instructions
+7. In contribution-preservation mode, follow the host project's instructions
    and established conventions for commit messages, branches, PR titles,
    labels, changelogs, and releases. Do not apply Clean Commit, Clean Flow, or
    Clean Labels just because this skill is installed.
-6. If signals conflict or adoption is unclear, ask before changing commit,
+8. If signals conflict or adoption is unclear, ask before changing commit,
    branch, PR-title, or label conventions. Ordinary code changes can continue
    under the project's existing rules.
 

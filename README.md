@@ -14,6 +14,11 @@ external projects, it enters contribution-preservation mode and respects the
 target project's existing commit, branch, PR, changelog, release, and label
 rules.
 
+The default owner scope is `wgtechlabs/*` and `warengonzaga/*`. Projects in
+that scope use Clean Workflow unless their explicit repository instructions say
+otherwise. Projects outside that scope opt in when they reference Clean
+Workflow, Clean Commit, Clean Flow, or Clean Labels.
+
 ## Install for Codex
 
 Add the repository as a plugin marketplace, then install the plugin:
