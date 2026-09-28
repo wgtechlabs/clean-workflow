@@ -57,10 +57,10 @@ Keep the project's Git and delivery conventions throughout the task.
 
 | Request | Workflow |
 | --- | --- |
-| Build, fix, or refactor | Use [Clean Development](../clean-development/SKILL.md), including its verification and final examination. |
+| Build, fix, or refactor | Use [Clean Coding](../clean-coding/SKILL.md), including its verification and final examination. |
 | Review code, a diff, or a PR | Use [Clean Code Review](../clean-code-review/SKILL.md). Inspect and validate existing feedback before adding findings; report or publish within the authorized scope. Do not implement fixes or resolve threads. |
-| Address existing review feedback | Use [Clean Development](../clean-development/SKILL.md) and [Code review handling](references/code-review.md). Validate feedback, implement necessary corrections, verify remote fixes, reply to each addressed thread, and resolve eligible threads. |
-| Review and fix, or another explicitly combined request | Use Clean Code Review to validate existing feedback and identify new issues, then Clean Development for the authorized corrections, followed by a bounded Clean Code Review verification of the final changes. |
+| Address existing review feedback | Use [Clean Coding](../clean-coding/SKILL.md) and [Code review handling](references/code-review.md). Validate feedback, implement necessary corrections, verify remote fixes, reply to each addressed thread, and resolve eligible threads. |
+| Review and fix, or another explicitly combined request | Use Clean Code Review to validate existing feedback and identify new issues, then Clean Coding for the authorized corrections, followed by a bounded Clean Code Review verification of the final changes. |
 
 Carry the reviewed commit, relevant finding/thread links, validation evidence,
 user constraints, and unresolved questions between stages. Recheck the current

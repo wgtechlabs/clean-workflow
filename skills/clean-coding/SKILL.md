@@ -1,9 +1,9 @@
 ---
-name: clean-development
-description: Implement features, fix bugs, refactor code, and complete scoped engineering changes with minimal complexity and evidence-backed verification. Use when the user asks to build, add, fix, implement, or change software; not for review-only requests, general explanations, or non-coding tasks.
+name: clean-coding
+description: Implement features, fix bugs, refactor code, and complete scoped engineering changes with minimal complexity and evidence-backed verification. Use when the user asks to build, add, fix, implement, change software, or address code-review feedback; not for review-only requests, general explanations, or non-coding tasks.
 ---
 
-# Clean Development
+# Clean Coding
 
 Deliver the requested engineering outcome using the smallest complete implementation that satisfies it. This is a self-contained synthesis of Grilling, APEX, Impeccable, Make Interfaces Feel Better, Thermo-Nuclear, and Ponytail. Apply the relevant principles below; invoking this skill does not require running all six source workflows.
 
@@ -35,6 +35,41 @@ For substantial work, state a short implementation plan tied to acceptance crite
 Follow Analyze → Plan → Execute → eXamine, scaled to the task. Put behavior in the canonical layer, reuse established conventions, and fix root causes where affected callers converge. Keep changes cohesive; do not scatter guards across callers when the shared contract needs correction.
 
 Re-plan when code or runtime evidence invalidates an assumption. Keep deferred work and incomplete criteria visible during longer tasks. When delegation is separately authorized and useful, bound each independent subtask by objective, allowed files, excluded scope, and completion evidence; inspect returned changes before integrating them.
+
+## Address code-review feedback
+
+When asked to address PR review feedback, handle implementation and thread
+follow-through together. Honor explicit draft-only, no-push, no-comment, or
+no-resolution limits. A review-only request does not activate this workflow.
+
+1. Fetch the current remote head, reviews, inline comments, replies, and thread
+   status. Paginate the feedback and identify the requested scope. Validate each
+   relevant comment against current code and tests before changing anything.
+   Do not blindly implement speculative, unnecessary, duplicate, or already-fixed
+   suggestions. Group fixes by root cause while tracking every addressed thread.
+2. Implement the smallest necessary correction and run relevant checks. If the
+   fix already exists, verify it instead of changing the code again. For disputed
+   or unsupported feedback, explain the evidence in that comment's thread and
+   leave it unresolved when a material disagreement or decision remains.
+3. Deliver the fix to the PR branch when authorized and verify that the current
+   remote code contains it. If publication is outside scope or blocked, report
+   the fix as local/pending; do not claim the PR feedback is fully addressed.
+4. **Always reply directly to each addressed review comment or thread.** State
+   what changed (or where the existing fix was verified), link the commit or
+   relevant code, and report the checks actually run and any limitations. A
+   top-level PR comment or chat summary is not a substitute for this reply. Read
+   existing replies first and reuse an equivalent verified reply instead of
+   duplicating it. For feedback without a thread/reply facility, use the host's
+   closest supported response location, link the original comment, and disclose
+   that limitation.
+5. Read back the reply, then resolve that specific thread only after its concern
+   is addressed in the remote code and validation supports the fix. An authorized
+   request to address review feedback includes these replies and resolutions
+   unless the user limits that scope. Never resolve first or dismiss another
+   review. Leave unresolved concerns and blocked actions visible.
+6. Refetch the thread and verify its reply and resolution state. Report links to
+   addressed threads and any pending items. After an uncertain write, inspect
+   remote state before retrying; tool limitations do not count as completion.
 
 ## Design and polish when UI is involved
 

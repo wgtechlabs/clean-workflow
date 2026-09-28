@@ -1,1 +1,12 @@
-{}
+{
+  "clean-code-review": {
+    "commit": "4d7d187b081c8a0f6676d95bc6ae09bd2e22eff1",
+    "release_id": 398505041,
+    "tag": "v0.1.0"
+  },
+  "clean-coding": {
+    "commit": "234198a4a8b1be0fa660d39995ec8a3d173aac99",
+    "release_id": 398529478,
+    "tag": "v1.0.0"
+  }
+}

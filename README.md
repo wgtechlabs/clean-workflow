@@ -3,7 +3,7 @@
 An installable Codex plugin and AI-agent skills for WG Tech Labs project
 workflow conventions.
 
-It combines Clean Development, Clean Code Review, Clean Commit, Clean Flow,
+It combines Clean Coding, Clean Code Review, Clean Commit, Clean Flow,
 Clean Labels, code-review handling,
 validation, and security-at-inception guidance. The workflow is extensible and
 can grow to cover project setup, releases, documentation, and maintenance.
@@ -35,15 +35,15 @@ Restart Codex after installation, then invoke it explicitly with:
 $clean-workflow
 ```
 
-You can also invoke `$clean-development` or `$clean-code-review` directly.
+You can also invoke `$clean-coding` or `$clean-code-review` directly.
 
 | Skill | Use |
 | --- | --- |
 | `clean-workflow` | Route the task and apply Git and delivery conventions |
-| `clean-development` | Implement, fix, or refactor with focused verification |
+| `clean-coding` | Implement, fix, or refactor with focused verification |
 | `clean-code-review` | Review changes with evidence-backed findings |
 
-For example: `$clean-development fix the reported login bug` or
+For example: `$clean-coding fix the reported login bug` or
 `$clean-code-review review PR #42 without posting`.
 
 Both specialized skills are also available in their own repositories:
@@ -67,7 +67,7 @@ The WG Tech Labs Clean family covers development, review, and delivery conventio
 | Repository | Purpose |
 | --- | --- |
 | [Clean Workflow](https://github.com/wgtechlabs/clean-workflow) | Combine the conventions and route tasks to the relevant workflow. |
-| [Clean Coding](https://github.com/wgtechlabs/clean-coding) | Standalone plugin for the `clean-development` skill: implementation, fixes, refactoring, and verification. |
+| [Clean Coding](https://github.com/wgtechlabs/clean-coding) | Standalone plugin for the `clean-coding` skill: implementation, fixes, refactoring, and verification. |
 | [Clean Code Review](https://github.com/wgtechlabs/clean-code-review) | Standalone plugin for evidence-backed code and pull-request reviews. |
 | [Clean Commit](https://github.com/wgtechlabs/clean-commit) | Consistent commit-message conventions. |
 | [Clean Flow](https://github.com/wgtechlabs/clean-flow) | Branch and promotion conventions: ship through `dev`, keep `main` stable. |
@@ -89,7 +89,7 @@ remain usable without this coordination layer.
 ## Skill ownership and updates
 
 [Clean Coding](https://github.com/wgtechlabs/clean-coding) is the canonical source
-for `clean-development`.
+for `clean-coding`.
 [Clean Code Review](https://github.com/wgtechlabs/clean-code-review) is the canonical
 source for `clean-code-review`. Make changes to those skills in their respective
 repositories first, then update the copies bundled here from the upstream source.
@@ -150,7 +150,7 @@ for targeting and authorization rules.
 - `.agents/plugins/marketplace.json` — marketplace catalog for repository installation
 - `.codex-plugin/plugin.json` — Codex plugin manifest
 - `skills/clean-workflow/SKILL.md` — workflow entrypoint and task routing
-- `skills/clean-development/SKILL.md` — implementation and verification
+- `skills/clean-coding/SKILL.md` — implementation and verification
 - `skills/clean-code-review/SKILL.md` — review and authorized publication
 - `skills/clean-workflow/references/` — detailed workflow conventions
 - `.github/workflows/release.yml` — automated versioning and releases
