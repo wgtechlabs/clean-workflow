@@ -1,6 +1,6 @@
 ---
 name: clean-workflow
-description: Apply WG Tech Labs conventions for planning, building, reviewing, releasing, and maintaining software projects.
+description: Apply WG Tech Labs Clean Workflow conventions when a project or user adopts them; otherwise respect the target project's existing workflow.
 metadata:
   short-description: Apply the WG Tech Labs Clean Workflow
 ---
@@ -9,10 +9,38 @@ metadata:
 
 Use this skill for software-project work involving Git, GitHub, commits,
 branches, pull requests, reviews, releases, labels, documentation, testing,
-or security.
+or security when the project or user has adopted the WG Tech Labs Clean
+Workflow.
 
 The repository's instructions and the user's request remain authoritative.
-Apply this workflow where it fits; do not force it onto unrelated work.
+Apply this workflow where it fits; do not force it onto unrelated work or
+override another project's conventions.
+
+## Convention detection
+
+Before applying Clean Commit, Clean Flow, or Clean Labels, determine whether
+they are in scope:
+
+1. Follow explicit system, repository, organization, and user instructions.
+2. Inspect existing commits, branch names, pull-request conventions, labels,
+   contribution docs, and agent instructions for the project's established
+   workflow.
+3. Treat Clean Workflow as active when the project explicitly references it,
+   the user requests it, or the repository is a WG Tech Labs project that uses
+   these conventions.
+4. Enter contribution-preservation mode when working in a fork, preparing an
+   upstream contribution, opening a PR against another project's repository,
+   maintaining a dependency, or working in an unrelated external repository.
+5. In contribution-preservation mode, follow the host project's instructions
+   and established conventions for commit messages, branches, PR titles,
+   labels, changelogs, and releases. Do not apply Clean Commit, Clean Flow, or
+   Clean Labels just because this skill is installed.
+6. If signals conflict or adoption is unclear, ask before changing commit,
+   branch, PR-title, or label conventions. Ordinary code changes can continue
+   under the project's existing rules.
+
+Do not rewrite existing history or rename existing branches and labels merely
+to make another project conform to Clean Workflow.
 
 ## Core workflow
 
@@ -26,6 +54,9 @@ Apply this workflow where it fits; do not force it onto unrelated work.
 - Never expose, log, or commit secrets.
 
 ## Git and GitHub conventions
+
+Apply the following references only after convention detection confirms that
+Clean Workflow is in scope:
 
 Follow the detailed rules in these references:
 

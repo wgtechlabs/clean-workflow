@@ -7,6 +7,13 @@ It combines Clean Commit, Clean Flow, Clean Labels, code-review handling,
 validation, and security-at-inception guidance. The workflow is extensible and
 can grow to cover project setup, releases, documentation, and maintenance.
 
+Clean Workflow is context-aware. It applies automatically to projects that
+explicitly adopt these conventions, when the user requests them, or within WG
+Tech Labs repositories that use them. For forks, upstream contributions, and
+external projects, it enters contribution-preservation mode and respects the
+target project's existing commit, branch, PR, changelog, release, and label
+rules.
+
 ## Install for Codex
 
 Add the repository as a plugin marketplace, then install the plugin:
