@@ -162,10 +162,12 @@ Releases run from `main` through
 The action derives the SemVer bump from Clean Commit history, updates
 `CHANGELOG.md`, creates the version tag, and publishes the GitHub Release.
 
-The workflow uses the repository's `GH_PAT` secret for release operations. The
-first release falls back to `0.1.0`. The Codex plugin manifest currently keeps
-its version in `.codex-plugin/plugin.json`; update that manifest in the release
-change until the release action supports plugin manifests directly.
+The workflow uses the built-in `GITHUB_TOKEN` with `contents: write`; no PAT
+secret is required. It plans a version, updates `.codex-plugin/plugin.json`, then
+commits the manifest with the changelog before creating the tag and GitHub Release.
+The initial release falls back to `0.1.0`. Release runs are serialized, and the
+release action is pinned to an inspected commit. Branch rules must permit the
+release commit. Sync generated changes from `main` back into `dev` after release.
 
 ## License
 
