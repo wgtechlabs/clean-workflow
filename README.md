@@ -73,9 +73,34 @@ The WG Tech Labs Clean family covers development, review, and delivery conventio
 | [Clean Flow](https://github.com/wgtechlabs/clean-flow) | Branch and promotion conventions: ship through `dev`, keep `main` stable. |
 | [Clean Labels](https://github.com/wgtechlabs/clean-labels) | Consistent repository label categories and descriptions. |
 
-For Clean Labels setup and migration, use the
-[GHLT CLI](https://github.com/warengonzaga/github-labels-template) as described in
-[the label guidance](skills/clean-workflow/references/clean-labels.md).
+## Tools used
+
+These tools support the relevant workflow steps; they are not all required for
+every task. The development and review skills use the target project's existing
+build, lint, test, and runtime tools.
+
+| Tool or project | Role |
+| --- | --- |
+| [Git](https://git-scm.com/) | Inspect changes and manage commits, branches, and merges. |
+| [GitHub CLI (`gh`)](https://github.com/cli/cli) | Work with GitHub pull requests, reviews, releases, and issue/PR label assignments. An available GitHub integration can cover supported operations. |
+| [GitHub Labels Template (`ghlt`)](https://github.com/warengonzaga/github-labels-template) | Apply, migrate, and verify the Clean Labels template on a repository. Uses an authenticated GitHub CLI. |
+| [Release Build Flow Action](https://github.com/wgtechlabs/release-build-flow-action) | Automate version calculation, changelog updates, tags, and GitHub Releases in the configured release workflow. |
+| [Codex CLI](https://github.com/openai/codex) | Install the marketplace and plugin using the commands above. Other Agent Skills-compatible hosts can load the skill folders directly. |
+
+### Clean Labels with GHLT
+
+```bash
+npm install -g github-labels-template
+ghlt list --repo owner/repo
+ghlt apply --repo owner/repo
+```
+
+`apply` preserves existing labels by default. For an explicitly authorized
+clean-slate migration, use `ghlt migrate -y --repo owner/repo`; this deletes
+existing labels before applying the template. Verify the result with `ghlt list`.
+Use `gh` or an available GitHub integration to assign labels to individual issues
+and PRs. See [Clean Labels guidance](skills/clean-workflow/references/clean-labels.md)
+for targeting and authorization rules.
 
 ## Contents
 
