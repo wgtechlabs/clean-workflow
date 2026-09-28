@@ -46,9 +46,10 @@ You can also invoke `$clean-development` or `$clean-code-review` directly.
 For example: `$clean-development fix the reported login bug` or
 `$clean-code-review review PR #42 without posting`.
 
-Both specialized skills are self-contained adaptations of the local
-`focused-development` and `focused-code-review` skills. Their source lineage
-is documented in each skill; no upstream skill installation is required.
+Both specialized skills are also available in their own repositories:
+[Clean Coding](https://github.com/wgtechlabs/clean-coding) and
+[Clean Code Review](https://github.com/wgtechlabs/clean-code-review). Their source
+lineage is documented in each skill; no upstream skill installation is required.
 They still need the repository access and tools relevant to the task.
 
 Clean Code Review reports in chat unless the user or applicable repository
@@ -58,6 +59,23 @@ permission to comment alone is insufficient. Existing authorization is reused.
 Agents that support the Agent Skills format can load the desired folder under
 `skills/` directly. Load `clean-workflow` alongside a specialized skill when
 WG Tech Labs Git and delivery conventions are also wanted.
+
+## Clean repositories
+
+The WG Tech Labs Clean family covers development, review, and delivery conventions:
+
+| Repository | Purpose |
+| --- | --- |
+| [Clean Workflow](https://github.com/wgtechlabs/clean-workflow) | Combine the conventions and route tasks to the relevant workflow. |
+| [Clean Coding](https://github.com/wgtechlabs/clean-coding) | Standalone plugin for the `clean-development` skill: implementation, fixes, refactoring, and verification. |
+| [Clean Code Review](https://github.com/wgtechlabs/clean-code-review) | Standalone plugin for evidence-backed code and pull-request reviews. |
+| [Clean Commit](https://github.com/wgtechlabs/clean-commit) | Consistent commit-message conventions. |
+| [Clean Flow](https://github.com/wgtechlabs/clean-flow) | Branch and promotion conventions: ship through `dev`, keep `main` stable. |
+| [Clean Labels](https://github.com/wgtechlabs/clean-labels) | Consistent repository label categories and descriptions. |
+
+For Clean Labels setup and migration, use the
+[GHLT CLI](https://github.com/warengonzaga/github-labels-template) as described in
+[the label guidance](skills/clean-workflow/references/clean-labels.md).
 
 ## Contents
 
