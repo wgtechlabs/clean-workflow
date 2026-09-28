@@ -77,7 +77,7 @@ Follow the detailed rules in these references:
 
 - [Clean Commit](references/clean-commit.md)
 - [Clean Flow](references/clean-flow.md)
-- [Clean Labels](references/clean-labels.md)
+- [Clean Labels](references/clean-labels.md) — use GHLT for template setup and migration
 - [Code review handling](references/code-review.md)
 
 When a request involves one of these areas, read the relevant reference before
