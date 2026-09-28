@@ -1,0 +1,43 @@
+name: Sync upstream skills
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-upstream-skills
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+      - name: Detect and import stable releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 scripts/test-sync-skills.py
+          python3 scripts/sync-skills.py
+          git diff --check
+      - name: Open or update sync PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          base: dev
+          branch: chore/sync-upstream-skills
+          commit-message: '🔧 update: sync canonical skills'
+          title: '🔧 update: sync canonical skills'
+          body: |
+            Import the canonical skills from the standalone repositories' published stable releases.
+            Release tags and exact commits are recorded in skills/upstream-releases.json. Review the skill changes before merging.
+          add-paths: |
+            skills/clean-development/
+            skills/clean-code-review/
+            skills/upstream-releases.json
