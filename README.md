@@ -73,6 +73,19 @@ The WG Tech Labs Clean family covers development, review, and delivery conventio
 | [Clean Flow](https://github.com/wgtechlabs/clean-flow) | Branch and promotion conventions: ship through `dev`, keep `main` stable. |
 | [Clean Labels](https://github.com/wgtechlabs/clean-labels) | Consistent repository label categories and descriptions. |
 
+## Workflow coordination
+
+Clean Workflow selects the relevant bundled skill from the request:
+
+- **Review:** validate existing feedback and review the changes with Clean Code Review.
+- **Address feedback:** use Clean Coding to validate and implement necessary fixes, verify them, reply directly to each addressed review thread, and resolve eligible threads.
+- **Review and fix:** coordinate both skills, then verify the final changes and report remaining issues.
+
+It carries findings and validation evidence between stages without requiring
+repeated skill invocations. Review-only requests remain review-only, and user
+limits on publishing or resolving threads still apply. The standalone skills
+remain usable without this coordination layer.
+
 ## Skill ownership and updates
 
 [Clean Coding](https://github.com/wgtechlabs/clean-coding) is the canonical source

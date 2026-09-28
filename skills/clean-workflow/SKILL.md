@@ -49,13 +49,37 @@ they are in scope:
 Do not rewrite existing history or rename existing branches and labels merely
 to make another project conform to Clean Workflow.
 
-## Choose the task workflow
+## Coordinate the task workflow
 
-- For implementation, bug fixes, or refactoring, read [Clean Development](../clean-development/SKILL.md).
-- For reviewing a diff or pull request, read [Clean Code Review](../clean-code-review/SKILL.md).
-- For addressing existing review feedback, read [Code review handling](references/code-review.md) and use Clean Development when a code change is needed.
+Choose and load the relevant bundled skill automatically from the user's intent;
+do not require the user to name each skill or repeat authorization already given.
+Keep the project's Git and delivery conventions throughout the task.
 
-Load only the workflow relevant to the requested task. The two skills also work independently and do not require the original source skills. Keep the Git and delivery conventions below when using this entrypoint. A review-only request does not authorize fixes or thread resolution.
+| Request | Workflow |
+| --- | --- |
+| Build, fix, or refactor | Use [Clean Development](../clean-development/SKILL.md), including its verification and final examination. |
+| Review code, a diff, or a PR | Use [Clean Code Review](../clean-code-review/SKILL.md). Inspect and validate existing feedback before adding findings; report or publish within the authorized scope. Do not implement fixes or resolve threads. |
+| Address existing review feedback | Use [Clean Development](../clean-development/SKILL.md) and [Code review handling](references/code-review.md). Validate feedback, implement necessary corrections, verify remote fixes, reply to each addressed thread, and resolve eligible threads. |
+| Review and fix, or another explicitly combined request | Use Clean Code Review to validate existing feedback and identify new issues, then Clean Development for the authorized corrections, followed by a bounded Clean Code Review verification of the final changes. |
+
+Carry the reviewed commit, relevant finding/thread links, validation evidence,
+user constraints, and unresolved questions between stages. Recheck the current
+head before relying on earlier findings. Do not change speculative or unsupported
+feedback into implementation requirements. Keep blocked or disputed items visible.
+
+For combined work, avoid publishing an intermediate finding as though it remains
+unfixed after implementation. The final report distinguishes verified fixes,
+remaining findings, and validation gaps. Reuse existing review threads and replies;
+do not duplicate findings or post repetitive stage summaries. Thread-specific
+replies required by the feedback-handling workflow are not optional summaries.
+
+Advance through authorized stages without asking again. Honor read-only,
+chat-only, no-push, no-comment, and no-resolution limits. A review-only request
+never becomes a fix request automatically. Coordination does not grant permission
+to approve, merge, release, or deploy; use the applicable authorization rules.
+
+The two specialized skills also work independently. They do not require the
+original source skills, and this coordination does not require separate agents.
 
 ## Core workflow
 
