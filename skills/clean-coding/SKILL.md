@@ -1,9 +1,9 @@
 ---
-name: clean-development
+name: clean-coding
 description: Implement features, fix bugs, refactor code, and complete scoped engineering changes with minimal complexity and evidence-backed verification. Use when the user asks to build, add, fix, implement, or change software; not for review-only requests, general explanations, or non-coding tasks.
 ---
 
-# Clean Development
+# Clean Coding
 
 Deliver the requested engineering outcome using the smallest complete implementation that satisfies it. This is a self-contained synthesis of Grilling, APEX, Impeccable, Make Interfaces Feel Better, Thermo-Nuclear, and Ponytail. Apply the relevant principles below; invoking this skill does not require running all six source workflows.
 

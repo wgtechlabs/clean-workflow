@@ -3,7 +3,7 @@
 ## Ownership
 
 - `skills/clean-workflow/` contains the workflow routing and delivery conventions maintained here.
-- `skills/clean-development/` is a downstream copy of `skills/clean-development/` in `wgtechlabs/clean-coding`.
+- `skills/clean-coding/` is a downstream copy of `skills/clean-coding/` in `wgtechlabs/clean-coding`.
 - `skills/clean-code-review/` is a downstream copy of `skills/clean-code-review/` in `wgtechlabs/clean-code-review`.
 - Make behavior changes to the two specialized skills in their canonical repositories first. Import upstream changes here; do not patch or fork the bundled skill content independently.
 - Preserve source attribution, supporting files, and relative links when importing updates. Record the upstream revision and validate the resulting plugin before publishing.

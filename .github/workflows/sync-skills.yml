@@ -38,6 +38,6 @@ jobs:
             Import the canonical skills from the standalone repositories' published stable releases.
             Release tags and exact commits are recorded in skills/upstream-releases.json. Review the skill changes before merging.
           add-paths: |
-            skills/clean-development/
+            skills/clean-coding/
             skills/clean-code-review/
             skills/upstream-releases.json
