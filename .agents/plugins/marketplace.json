@@ -1,0 +1,20 @@
+{
+  "name": "clean-workflow",
+  "interface": {
+    "displayName": "Clean Workflow"
+  },
+  "plugins": [
+    {
+      "name": "clean-workflow",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

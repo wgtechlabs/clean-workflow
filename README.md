@@ -61,6 +61,7 @@ WG Tech Labs Git and delivery conventions are also wanted.
 
 ## Contents
 
+- `.agents/plugins/marketplace.json` — marketplace catalog for repository installation
 - `.codex-plugin/plugin.json` — Codex plugin manifest
 - `skills/clean-workflow/SKILL.md` — workflow entrypoint and task routing
 - `skills/clean-development/SKILL.md` — implementation and verification
