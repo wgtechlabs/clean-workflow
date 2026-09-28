@@ -73,6 +73,32 @@ The WG Tech Labs Clean family covers development, review, and delivery conventio
 | [Clean Flow](https://github.com/wgtechlabs/clean-flow) | Branch and promotion conventions: ship through `dev`, keep `main` stable. |
 | [Clean Labels](https://github.com/wgtechlabs/clean-labels) | Consistent repository label categories and descriptions. |
 
+## Skill ownership and updates
+
+[Clean Coding](https://github.com/wgtechlabs/clean-coding) is the canonical source
+for `clean-development`.
+[Clean Code Review](https://github.com/wgtechlabs/clean-code-review) is the canonical
+source for `clean-code-review`. Make changes to those skills in their respective
+repositories first, then update the copies bundled here from the upstream source.
+Do not maintain independent edits to the bundled copies in Clean Workflow.
+
+Clean Workflow owns task routing, Git and delivery conventions, and integration
+of the two skills. The bundled copies keep plugin installation self-contained;
+they are maintained dependencies, not separate authoritative implementations.
+
+The `Sync upstream skills` workflow checks both upstream `main` branches daily
+at 00:00 UTC and supports manual dispatch. It copies each entire skill directory,
+records source commits in [skills/UPSTREAM.md](skills/UPSTREAM.md), and opens or
+updates one PR against `dev`. It never merges automatically. Supporting files and
+deletions are synchronized along with `SKILL.md`.
+
+The workflow becomes scheduled after it reaches the default branch. Enable
+GitHub Actions to create pull requests in repository settings; it uses the
+built-in `GITHUB_TOKEN` with contents and pull-request write permissions.
+For a local sync, check out both upstream repositories at their intended `main`
+commits under one directory and run `bash scripts/sync-skills.sh <directory>`.
+Review the resulting diff before submitting it.
+
 ## Tools used
 
 These tools support the relevant workflow steps; they are not all required for
