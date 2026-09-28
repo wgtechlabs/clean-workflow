@@ -49,6 +49,14 @@ they are in scope:
 Do not rewrite existing history or rename existing branches and labels merely
 to make another project conform to Clean Workflow.
 
+## Choose the task workflow
+
+- For implementation, bug fixes, or refactoring, read [Clean Development](../clean-development/SKILL.md).
+- For reviewing a diff or pull request, read [Clean Code Review](../clean-code-review/SKILL.md).
+- For addressing existing review feedback, read [Code review handling](references/code-review.md) and use Clean Development when a code change is needed.
+
+Load only the workflow relevant to the requested task. The two skills also work independently and do not require the original source skills. Keep the Git and delivery conventions below when using this entrypoint. A review-only request does not authorize fixes or thread resolution.
+
 ## Core workflow
 
 - Inspect repository instructions, current branch, working-tree changes, and
@@ -78,6 +86,7 @@ acting. If repository instructions are stricter, follow the stricter rule.
 ## Completion
 
 Before reporting completion, inspect the final diff, run relevant validation,
-and state any check that could not be verified. For review work, do not call an
-item complete until the supported change, review reply, and resolution state
-have all been verified.
+and state any check that could not be verified. When addressing existing review
+feedback, verify the change and any authorized reply or thread resolution.
+Report actions outside the authorized scope as pending rather than performing
+them or claiming they are complete.
