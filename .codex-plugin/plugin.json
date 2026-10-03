@@ -19,8 +19,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Clean Workflow",
-    "shortDescription": "Apply WG Tech Labs workflow conventions",
-    "longDescription": "Plan, build, review, release, and maintain projects using WG Tech Labs Clean Workflow conventions.",
+    "shortDescription": "Take issues and PRs through Clean Workflow",
+    "longDescription": "Coordinate implementation, bot review waiting, code review, feedback fixes, merge-conflict resolution, and verified PR readiness using project conventions.",
     "developerName": "WG Technology Labs",
     "category": "Productivity",
     "capabilities": [
@@ -28,8 +28,8 @@
     ],
     "websiteURL": "https://github.com/wgtechlabs/clean-workflow",
     "defaultPrompt": [
-      "Use Clean Workflow for this task.",
-      "Apply WG Tech Labs project conventions."
+      "Use Clean Workflow to take this PR through review, fixes, and readiness checks.",
+      "Use Clean Workflow to tackle this issue and prepare its PR."
     ]
   }
 }
