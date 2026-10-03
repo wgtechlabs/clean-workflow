@@ -30,6 +30,9 @@
     "defaultPrompt": [
       "Use Clean Workflow to take this PR through review, fixes, and readiness checks.",
       "Use Clean Workflow to tackle this issue and prepare its PR."
-    ]
+    ],
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.svg",
+    "logoDark": "./assets/logo-dark.svg"
   }
 }

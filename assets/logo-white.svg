@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title">
+  <title id="title">Clean Workflow</title>
+  <path fill="#FFFFFF" d="M52 40H204Q216 40 216 52V136H144V88H40V52Q40 40 52 40Z"/>
+  <path fill="#FFFFFF" d="M40 120H112V168H216V204Q216 216 204 216H52Q40 216 40 204Z"/>
+</svg>
