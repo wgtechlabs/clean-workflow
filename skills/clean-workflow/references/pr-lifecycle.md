@@ -45,6 +45,14 @@ push or base update before relying on review/readiness results.
   explicit running state means wait. A human review request alone is not bot activity;
   track any required human approval separately. A green CI check does not prove
   that a separate review bot has finished.
+- If confirmed merge conflicts prevent a required review/scan from starting,
+  resolve that prerequisite before waiting for a nonexistent run. Let any other
+  active reviews/scans settle first, then use Clean Coding with the integration
+  rules in section 4 to resolve the conflicts, validate, and deliver authorized
+  changes. Restart this gate against the new head and keep the required result
+  unverified until it arrives. A missing run alone does not prove conflicts are
+  its cause; inspect the trigger and provider evidence. This prerequisite repair
+  does not skip the consolidated review or make a missing scan count as passed.
 - Immediately after opening/pushing, allow a short discovery interval and refresh
   the sources once (normally 30 seconds) for delayed bot startup. If no bot activity
   is observed and no configured/required review is outstanding, proceed and say so.
