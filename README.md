@@ -39,12 +39,14 @@ You can also invoke `$clean-coding` or `$clean-code-review` directly.
 
 | Skill | Use |
 | --- | --- |
-| `clean-workflow` | Route the task and apply Git and delivery conventions |
+| `clean-workflow` | Complete the issue/PR cycle and apply Git and delivery conventions |
 | `clean-coding` | Implement, fix, or refactor with focused verification |
 | `clean-code-review` | Review changes with evidence-backed findings |
 
-For example: `$clean-coding fix the reported login bug` or
-`$clean-code-review review PR #42 without posting`.
+For example: `$clean-workflow PR #42` or `$clean-workflow tackle issue #17`.
+Either loads Clean Coding and Clean Code Review automatically. For a narrower
+request, use `$clean-workflow review PR #42 only; do not edit or push` or invoke
+`$clean-code-review review PR #42 without posting` directly.
 
 Both specialized skills are also available in their own repositories:
 [Clean Coding](https://github.com/wgtechlabs/clean-coding) and
@@ -57,8 +59,8 @@ instructions authorize publication. Approval requires its own authorization;
 permission to comment alone is insufficient. Existing authorization is reused.
 
 Agents that support the Agent Skills format can load the desired folder under
-`skills/` directly. Load `clean-workflow` alongside a specialized skill when
-WG Tech Labs Git and delivery conventions are also wanted.
+`skills/` directly. Invoke `clean-workflow` alone for coordinated work; the
+specialized skills remain available for implementation-only or review-only tasks.
 
 ## Clean repositories
 
@@ -75,16 +77,31 @@ The WG Tech Labs Clean family covers development, review, and delivery conventio
 
 ## Workflow coordination
 
-Clean Workflow selects the relevant bundled skill from the request:
+An explicit Clean Workflow request on a PR selects the complete cycle by default:
 
-- **Review:** validate existing feedback and review the changes with Clean Code Review.
-- **Address feedback:** use Clean Coding to validate and implement necessary fixes, verify them, reply directly to each addressed review thread, and resolve eligible threads.
-- **Review and fix:** coordinate both skills, then verify the final changes and report remaining issues.
+1. Inspect the PR, linked issue, repository rules, current code, and existing feedback.
+2. Detect and wait for active review/scanning bots, including Copilot and other providers.
+3. Run Clean Code Review and validate human/bot findings without duplicating them.
+4. Use Clean Coding to address valid findings together, resolve merge conflicts,
+   verify the remote fixes, and reply to and resolve addressed review threads.
+5. Check newly triggered bot work, review the final changes, and verify current
+   checks and merge requirements before presenting the PR for a merge decision.
 
-It carries findings and validation evidence between stages without requiring
-repeated skill invocations. Review-only requests remain review-only, and user
-limits on publishing or resolving threads still apply. The standalone skills
-remain usable without this coordination layer.
+For an issue, Clean Coding first implements and verifies the requested behavior,
+then opens or updates its PR and enters the same cycle. No separate skill mentions
+are needed. See [PR and issue lifecycle](skills/clean-workflow/references/pr-lifecycle.md)
+for bot discovery, bounded waiting, feedback rounds, and the readiness gate.
+
+The complete cycle includes necessary commits, pushes, PR creation/update, and
+feedback replies/resolutions unless the user limits them. Explicit review-only,
+read-only, no-push, no-comment, no-resolution, and draft-only limits take precedence.
+Installing the plugin or automatically detecting its conventions does not grant
+that delivery scope. Approval, merge, release, and deployment remain separate actions.
+
+The workflow reports stalled bots, missing evidence, unknown mergeability, and
+required human approvals as pending or blocked. It does not claim readiness merely
+because local tests pass or conflicts are cleared. The standalone skills remain
+usable without this coordination layer.
 
 ## Skill ownership and updates
 
