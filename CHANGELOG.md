@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [1.1.1] - 2026-10-03
+
+### Changed
+
+- import clean coding v1.1.0 (#12)
+
 ## [1.1.0] - 2026-10-03
 
 ### Added
