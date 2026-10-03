@@ -1,5 +1,7 @@
 # Clean Workflow
 
+<img src="assets/icon.svg" width="72" height="72" alt="Clean Workflow logo">
+
 An installable Codex plugin and AI-agent skills for WG Tech Labs project
 workflow conventions.
 
@@ -36,6 +38,12 @@ $clean-workflow
 ```
 
 You can also invoke `$clean-coding` or `$clean-code-review` directly.
+
+The plugin's display name is **Clean Workflow**. The stable `clean-workflow`
+identifier remains part of installation commands and skill namespaces. Custom
+artwork is bundled with the plugin; see the [artwork guide](assets/README.md)
+for variants and [branding verification](docs/plugin-branding.md) for supported
+metadata and verification limits.
 
 | Skill | Use |
 | --- | --- |
