@@ -2,8 +2,8 @@
 
 <img src="assets/icon.svg" width="72" height="72" alt="Clean Workflow logo">
 
-An installable Codex plugin and AI-agent skills for WG Tech Labs project
-workflow conventions.
+A Codex plugin and portable AI-agent skills for WG Tech Labs project
+workflow conventions, including a standalone ChatGPT cloud-skill option.
 
 It combines Clean Coding, Clean Code Review, Clean Commit, Clean Flow,
 Clean Labels, code-review handling,
@@ -50,11 +50,24 @@ metadata and verification limits.
 | `clean-workflow` | Complete the issue/PR cycle and apply Git and delivery conventions |
 | `clean-coding` | Implement, fix, or refactor with focused verification |
 | `clean-code-review` | Review changes with evidence-backed findings |
+| `clean-workflow-chatgpt` | Self-contained ChatGPT cloud-skill edition of the complete workflow |
 
 For example: `$clean-workflow PR #42` or `$clean-workflow tackle issue #17`.
 Either loads Clean Coding and Clean Code Review automatically. For a narrower
 request, use `$clean-workflow review PR #42 only; do not edit or push` or invoke
 `$clean-code-review review PR #42 without posting` directly.
+
+## Use as a ChatGPT cloud skill
+
+The standalone `skills/clean-workflow-chatgpt/` folder contains one self-contained skill and its MIT license. Create an uploadable ZIP from the repository root:
+
+```bash
+python3 scripts/package-chatgpt-skill.py ./clean-workflow-chatgpt.zip
+```
+
+The ZIP places `SKILL.md` at its root. In ChatGPT, open **Plugins → Skills → Create → Upload from your computer** and select the ZIP. Skill upload availability depends on your account and workspace settings; see [Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt).
+
+The cloud skill provides workflow instructions only. Connect the GitHub app separately and grant it access to the target repository for supported GitHub actions. File edits and local checks require an attached coding workspace. The skill does not add tools, credentials, repository access, or permissions.
 
 Both specialized skills are also available in their own repositories:
 [Clean Coding](https://github.com/wgtechlabs/clean-coding) and
@@ -177,6 +190,8 @@ for targeting and authorization rules.
 - `skills/clean-workflow/SKILL.md` — workflow entrypoint and task routing
 - `skills/clean-coding/SKILL.md` — implementation and verification
 - `skills/clean-code-review/SKILL.md` — review and authorized publication
+- `skills/clean-workflow-chatgpt/` — standalone ChatGPT cloud skill and license
+- `scripts/package-chatgpt-skill.py` — build an uploadable ZIP for ChatGPT Skills
 - `skills/clean-workflow/references/` — detailed workflow conventions
 - `.github/workflows/release.yml` — automated versioning and releases
 
