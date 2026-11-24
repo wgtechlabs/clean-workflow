@@ -59,15 +59,22 @@ request, use `$clean-workflow review PR #42 only; do not edit or push` or invoke
 
 ## Use as a ChatGPT cloud skill
 
-The standalone `skills/clean-workflow-chatgpt/` folder contains one self-contained skill and its MIT license. Create an uploadable ZIP from the repository root:
+The standalone `skills/clean-workflow-chatgpt/` folder contains one self-contained
+skill and its MIT license. Create an uploadable ZIP from the repository root:
 
 ```bash
 python3 scripts/package-chatgpt-skill.py ./clean-workflow-chatgpt.zip
 ```
 
-The ZIP places `SKILL.md` at its root. In ChatGPT, open **Plugins → Skills → Create → Upload from your computer** and select the ZIP. Skill upload availability depends on your account and workspace settings; see [Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt).
+The ZIP places `SKILL.md` at its root. In ChatGPT, open **Plugins → Skills →
+Create → Upload from your computer** and select the ZIP. Skill upload
+availability depends on your account and workspace settings; see
+[Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt).
 
-The cloud skill provides workflow instructions only. Connect the GitHub app separately and grant it access to the target repository for supported GitHub actions. File edits and local checks require an attached coding workspace. The skill does not add tools, credentials, repository access, or permissions.
+The cloud skill provides workflow instructions only. Connect the GitHub app
+separately and grant it access to the target repository for supported GitHub
+actions. File edits and local checks require an attached coding workspace. The
+skill does not add tools, credentials, repository access, or permissions.
 
 Both specialized skills are also available in their own repositories:
 [Clean Coding](https://github.com/wgtechlabs/clean-coding) and
