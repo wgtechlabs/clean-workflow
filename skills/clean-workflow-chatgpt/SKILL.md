@@ -194,8 +194,12 @@ rename existing branches or labels to impose this workflow.
 
 When Clean Commit applies, use one of these formats:
 
-<emoji> <type>: <description> <emoji> <type> (<scope>): <description> <emoji> <type>!:
-<description> <emoji> <type>! (<scope>): <description>
+```text
+<emoji> <type>: <description>
+<emoji> <type> (<scope>): <description>
+<emoji> <type>!: <description>
+<emoji> <type>! (<scope>): <description>
+```
 
 Match emoji and lowercase type: 📦 new for new capabilities; 🔧 update for existing-code
 changes and fixes; 🗑️ remove; 🔒 security; ⚙️ setup; ☕ chore; 🧪 test; 📖 docs; 🚀
